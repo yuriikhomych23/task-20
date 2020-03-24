@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.input__field {
+    width: 50%;
+    height: 80vh;
+    margin: 50px  100px;
+}
+
+.result__field {
+    width: 50%;
+    height: 80vh;
+    margin: 85px 100px 30px 0;
+    display: block;
+}
+
+.login {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid lightblue;
+    margin: 10px 0 30px 0;
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+.pass {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid lightblue;
+    margin: 10px 0 30px 0;
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+.email {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid lightblue;
+    margin: 10px 0 30px 0;
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+#btn__add__user {
+    width: 120px;
+    height: 45px;
+    border-radius: 3px;
+    border: 1.5px solid rgb(24, 228, 35);
+    outline: none;
+    margin: 20px auto;
+    color: rgb(24, 228, 35);
+    background-color: white;
+    font-size: 16px; 
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.text {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
