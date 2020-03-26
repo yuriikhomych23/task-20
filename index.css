@@ -87,17 +87,17 @@ tr {
 }
 
 
-.borderGreen {
+.green {
     border: 2px solid rgb(13, 201, 22);
     transition: .3s;
 }
 
-.borderRed {
+.red {
     border: 2px solid rgb(253, 18, 18);
     transition: .3s;
 }
 
-.table {
+#table {
     width: 100%;
     padding: 8px 0;
 }
