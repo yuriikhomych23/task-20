@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<div class="box">
+<div class="container">
     <div class="input__field">
 
         <form name="data">
@@ -22,8 +22,9 @@
             <h2>Email address</h2>
             <input type="email" placeholder="Enter Email" id="email" name="email">
 
-            <input type="button" name="btn__add__user" id="btn__add__user" value="Add User">
-            <input style = "display: none" type="button" name="changeUser" value="Change User">
+            <input type="button" name="btnAddUser" id="btn__add__user" value="Add User">
+
+            <input type="button" name="btnEditUser" id="btn__edit__user" value="Edit User">
 
         </form>
 
@@ -39,7 +40,7 @@
                 
                     <thead>
 
-                        <tr class="myTr">
+                        <tr>
                             <th>#</th>
                             <th>Login</th>
                             <th>Password</th>
@@ -49,9 +50,12 @@
                         </tr>
                         
                     </thead>
-                    <tbody class="renderBody">
+
+                    <tbody id="renderBody">
 
                     </tbody>
+
+                    
                 </table>  
 
             <hr>
