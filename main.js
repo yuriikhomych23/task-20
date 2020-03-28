@@ -4,23 +4,92 @@ let formResult = document.forms['result']
 let login = document.getElementById('login')
 let pass = document.getElementById('pass');
 let email = document.getElementById('email');
+//............................
+
+let users = []; // масив юзерів 
+let renderBodyTag = document.querySelector('.renderBody'); // таблиця для відображення юзерів 
+
+
+// функція створення новго юзреа 
+btnAdd.addEventListener('click', function() {
+    // доступаємось до valeu 
+    let login = formData.login.value;
+    let pass = formData.pass.value;
+    let email = formData.email.value;
+
+    // створення юзера 
+    // let newUser = new Profile(login, pass, email);
+    // users.push(newUser); // добавляємо в масив юзерів 
+    // formData.reset();
+    // renderBody(); 
 
 
 
-
-// btnAdd.addEventListener('click', function() {
-//     let tbody = document.createElement("tbody");
-//     let tr = document.createElement("tr");
-//     let td = document.createElement("td");
-//     tr.innerHTML = login.value;
-//     tr.innerHTML = pass.value;
-//     tr.innerHTML = email.value;
-//     tr.appendChild(td);
-//     tbody.appendChild(tr);
-//     document.getElementById("").appendChild(tbody);
-// })
+    if(login != '' && pass != '' && email != '') {
+        let newUser = new Profile(login, pass, email);
+        users.push(newUser); // добавляємо в масив юзерів 
+        formData.reset();
+        renderBody(); 
+    }
+})
 
 
+function Profile(login, pass, email) {
+    this.login = login;
+    this.pass = pass;
+    this.email = email;
+}
+
+
+function renderBody() {
+    renderBodyTag.innerHTML = '';
+
+    for(let i = 0; i < users.length; i++) {
+        let tr = document.createElement('tr');
+
+        let td = document.createElement('td');
+        td.innerHTML = i + 1;
+        tr.appendChild(td);
+
+        for(let key in users[i]){
+            let td = document.createElement('td');
+            td.innerHTML = users[i][key];
+            tr.appendChild(td);
+        } 
+        tr.innerHTML += `<button onclick="editValue(${i})">Edit</button>`
+        tr.innerHTML += `<button onclick="editValue(${i})">Delete</button>`
+        renderBodyTag.appendChild(tr);
+    }
+
+}
+
+    function editValue(ind) {
+        formData.login.value = users[ind].login;
+        formData.pass.value = users[ind].pass;
+        formData.email.value = users[ind].email;
+
+        formData.btnAdd.style.display = 'none';
+        formData.changeUser.style.display = "block";
+        formData.changeUser.onclick = function() {
+            changeValue(ind);
+        }
+    }
+
+
+
+function changeValue(ind){
+    users[ind].login = formData.login.value;
+    users[ind].pass = formData.login.value;
+    users[ind].email = formData.login.value;
+    btnAdd.style.display = 'block';
+    formData.reset();
+    renderBody();
+}
+
+function deleteValue (ind) {
+    users.splice(ind, 1);
+    renderBody();
+}
 
 
 
