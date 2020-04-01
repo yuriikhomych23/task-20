@@ -42,7 +42,7 @@ function renderBody() {
             td.innerHTML = users[i][key];
             tr.appendChild(td);
         } 
-        tr.innerHTML += `<button class="btn__edit" onclick="editValue(${i})">Edit</button>`
+        tr.innerHTML += `<button type="button" class="btn__edit" onclick="editValue(${i})">Edit</button>`
         tr.innerHTML += `<button class="btn__delete" onclick="deleteValue(${i})">Delete</button>`
         renderBodyTag.appendChild(tr);
         
